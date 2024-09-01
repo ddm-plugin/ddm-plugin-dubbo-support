@@ -1,11 +1,16 @@
 {
-  "name": "ddm-plugin-dubbo-zookeeper-support",
-  "version": "1.0.0",
-  "description": "Dubbo-Desktop-Manager插件-Dubbo Zookeeper 数据源",
+  "name": "ddm-plugin-dubbo-support",
+  "version": "0.0.4",
+  "description": "Dubbo-Desktop-Manager插件-支持Dubbo框架",
   "main": "dist/index.js",
+  "rendererMain": "dist/renderer.js",
   "files": [
-    "index.js",
-    "logo.png"
+    "README.md",
+    "logo.png",
+    "public/**",
+    "dist/**",
+    "docs/**",
+    "java-invoke/**"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,14 +25,27 @@
   "author": "qiaolin",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.24.7",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.2.5",
-    "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4",
+    "css-loader": "^6.11.0",
+    "js-yaml": "^4.1.0",
+    "json-bigint": "^1.0.0",
+    "moment": "^2.29.1",
     "node-zookeeper-client": "^1.1.1",
-    "@babel/core": "^7.24.7"
+    "qs": "^6.11.0",
+    "style-loader": "^3.3.4",
+    "telnet-stream": "^1.0.5",
+    "urijs": "^1.19.11",
+    "vue": "^2.6.11",
+    "vue-loader": "15.11.1",
+    "vue-style-loader": "^4.1.3",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    
+    "canvas-confetti": "^1.9.3",
+    "ddm-plugin-dubbo-support": "file:"
   }
 }
