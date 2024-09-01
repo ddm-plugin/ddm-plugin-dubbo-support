@@ -4,6 +4,10 @@ node_modules
 yarn.lock
 package-lock.json
 
+/java-code/ddm-invoker/.idea
+/java-code/ddm-invoker/target
+
+
 # local env files
 .env.local
 .env.*.local
