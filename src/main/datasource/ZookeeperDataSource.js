@@ -12,7 +12,6 @@ class ZookeeperDataSource {
 
   constructor(app, invoker) {
     this.invoker = invoker;
-    this.name = "Zookeeper";
   }
 
   async getServiceList(dataSourceInfo) {

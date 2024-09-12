@@ -11,7 +11,6 @@ class NacosDataSource {
     constructor(appCore, invoker) {
         this.appCore = appCore;
         this.invoker = invoker
-        this.name = "Nacos";
     }
 
     async getServiceList(dataSourceInfo) {

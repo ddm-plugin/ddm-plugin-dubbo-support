@@ -26,7 +26,7 @@ export default {
       form: {
         address: "127.0.0.1:2181",
         sessionTimeout: 5000,
-        scheme: 'digest',
+        scheme: 'auth',
         auth: '',
       },
     };

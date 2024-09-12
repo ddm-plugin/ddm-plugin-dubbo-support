@@ -9,7 +9,6 @@ class DubboAdminDataSource {
 
     constructor(appCore) {
         this.appCore = appCore;
-        this.name = "Dubbo Admin";
     }
 
     async getServiceList(dataSourceInfo) {
