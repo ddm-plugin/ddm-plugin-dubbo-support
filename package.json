@@ -4,6 +4,7 @@
   "description": "Dubbo-Desktop-Manager插件-支持Dubbo框架",
   "main": "dist/index.js",
   "rendererMain": "dist/renderer.js",
+  "i18nMain": "dist/i18n.js",
   "files": [
     "README.md",
     "logo.png",
@@ -44,8 +45,7 @@
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   },
-  "dependencies": {
-    "canvas-confetti": "^1.9.3",
-    "ddm-plugin-dubbo-support": "file:"
+  "engines": {
+    "ddm": "2.0.0"
   }
 }

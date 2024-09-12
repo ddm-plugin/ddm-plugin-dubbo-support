@@ -5,6 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: {
+    i18n: './src/i18n/index.js',
     index: './src/main/index.js',
     renderer: './src/renderer/main.js',
   },

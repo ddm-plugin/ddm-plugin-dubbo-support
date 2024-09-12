@@ -8,7 +8,7 @@ import InvokeUtils                  from "@/main/invoker/InvokeUtils.js";
 class JavaInvoker {
 
     constructor(appCore) {
-        this.pluginPath = appCore.pluginPath;
+        this.pluginDir = appCore.pluginDir;
 
         this.appCore = appCore;
     }
@@ -37,7 +37,7 @@ class JavaInvoker {
             dataList: dataList
         }
     
-        const outFile = path.join(`${this.pluginPath}/java-invoke/`, `${serviceName}${new Date().getTime()}.json`);
+        const outFile = path.join(`${this.pluginDir}/java-invoke/`, `${serviceName}${new Date().getTime()}.json`);
         fs.writeFileSync(outFile, JSON.stringify(invokeParam));
      
         let data = await this.executeJar(outFile);
@@ -62,7 +62,7 @@ class JavaInvoker {
         const commandArgs = [
             ...(jvmArgs ? [jvmArgs] : []),
             '-Dfile.encoding=utf-8',
-            '-jar', path.join(this.pluginPath, '/public/jar/java-invoker.jar'),
+            '-jar', path.join(this.pluginDir, '/public/jar/java-invoker.jar'),
             outFile
         ];
         const config = {

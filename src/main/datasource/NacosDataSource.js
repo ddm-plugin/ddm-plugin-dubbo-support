@@ -12,44 +12,6 @@ class NacosDataSource {
         this.appCore = appCore;
         this.invoker = invoker
         this.name = "Nacos";
-        this.invokerTypeList = ['java', 'telnet']
-    }
-
-    async getFormConfig() {
-    
-        return  {
-          properties: [{
-              label: app.pluginT('connect.nacos.address'),		
-              name: "address",		
-              type: "input",		
-              required: true, 
-              default: 'http://127.0.0.1:8848',
-            },
-            {
-                label: app.pluginT('connect.nacos.namespaceId'),		
-                name: "namespaceId",	
-                type: "input",			
-            },
-            {
-                label: app.pluginT('connect.nacos.groupName'),			
-                name: "groupName",		 
-                type: "input",			 
-                placeholder: app.pluginT('connect.nacos.groupNameTips'),
-            },
-            {
-                label: app.pluginT('connect.nacos.group'),			
-                name: "group",		 
-                type: "input",			 
-                placeholder: app.pluginT('connect.nacos.groupTips'),
-            },
-            {
-                label: app.pluginT('connect.nacos.sessionTimeout'),			
-                name: "sessionTimeout",		 
-                type: "input",			
-                required: true, 
-                default: "5000",
-            },
-        ]}
     }
 
     async getServiceList(dataSourceInfo) {

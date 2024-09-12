@@ -12,36 +12,6 @@ class DubboAdminDataSource {
         this.name = "Dubbo Admin";
     }
 
-    async getFormConfig() {
-        return {
-            properties: [{
-                    label: app.pluginT('connect.dubboAdmin.address'),
-                    name: "address",
-                    type: "input",
-                    required: true,
-                    default: "http://127.0.0.1:8080/api/dev/",
-                },
-                {
-                    label: app.pluginT('connect.dubboAdmin.username'),
-                    name: "username",
-                    type: "input",
-                },
-                {
-                    label: app.pluginT('connect.dubboAdmin.password'),
-                    name: "password",
-                    type: "password",
-                },
-                {
-                    label: app.pluginT('connect.dubboAdmin.sessionTimeout'),
-                    name: "sessionTimeout",
-                    type: "input",
-                    required: true,
-                    default: "5000",
-                }
-            ],
-        }
-    }
-
     async getServiceList(dataSourceInfo) {
         // `http://127.0.0.1:8848/api/dev/services`
         const url = `${dataSourceInfo.address}/services`
