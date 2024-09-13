@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import dubboInvoke                from "@/renderer/views/dubbo/dubbo-invoke.vue";
+import dubboProviderConfiguration from "@/renderer/views/dubbo/dubbo-provider-configuration.vue";
 
 export default {
   components: {
@@ -135,7 +137,7 @@ export default {
     openInvokeDrawer(provider) {
       let tabData = {
         title: this.$pluginT('dubbo.providePage.callTitle', { address: provider.address}),
-        componentName: 'dubboInvoke',
+        component: dubboInvoke,
         multiInstance: true,
         params: {
           serviceInfo: this.serviceInfo,
@@ -150,7 +152,7 @@ export default {
     openTelnet(provider) {
       let tabData = {
         title: `telnet ${provider.address}`,
-        componentName: 'telnetTerminal',
+        component: 'telnetTerminal',
         params: {
           ip: provider.ip,
           port: provider.port
@@ -161,7 +163,7 @@ export default {
     openConfiguration(provider) {
       let tabData = {
         title: `configuration ${provider.version}`,
-        componentName: 'dubboProviderConfiguration',
+        component: dubboProviderConfiguration,
         params: {
           serviceInfo: this.serviceInfo,
           provider

@@ -1,8 +1,5 @@
-import dubboProviderList          from "@/renderer/views/dubbo/dubbo-provider-list.vue";
-import dubboConsumerList          from "@/renderer/views/dubbo/dubbo-consumer-list.vue";
-import dubboInvoke                from "@/renderer/views/dubbo/dubbo-invoke.vue";
-import dubboProviderConfiguration from "@/renderer/views/dubbo/dubbo-provider-configuration.vue";
 import dubboPage                  from '@/renderer/views/dubbo/index.vue';
+import dubboInvoke                from "@/renderer/views/dubbo/dubbo-invoke.vue";
 
 import settings                   from '@/renderer/views/settings/index.vue';
 import Zookeeper                  from "@/renderer/views/edit/Zookeeper.vue";
@@ -13,12 +10,9 @@ export default (appRenderer) => {
 
   return {
     install() {
-      appRenderer.component('dubboPage', dubboPage);
-      appRenderer.component('dubboProviderList', dubboProviderList);
-      appRenderer.component('dubboConsumerList', dubboConsumerList);
-      appRenderer.component('dubboInvoke', dubboInvoke);
-      appRenderer.component('dubboProviderConfiguration', dubboProviderConfiguration);
-
+      appRenderer.registryServicePageComponent('dubbo', dubboPage);
+      appRenderer.registryServicInvokeComponent('dubbo', dubboInvoke);
+            
       appRenderer.registryDataSourceUpdateComponent("zookeeper", Zookeeper, { label: "Zookeeper" });
       appRenderer.registryDataSourceUpdateComponent("nacos", Nacos, { label: "Nacos" });
       appRenderer.registryDataSourceUpdateComponent("dubbo-admin", DubboAdmin, { label: "Dubbo-Admin" });

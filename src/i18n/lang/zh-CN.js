@@ -1,7 +1,7 @@
 export default {
     settings: {
         title:"执行器设置",
-        invokerType : "默认执行器类型",
+        invokerType : "默认执行器",
         invokerTypeTips : "使用Java执行器时，请先安装Java环境，Java调用相对Telnet执行器较慢，但是Java调用返回的信息更加完整。",
     },
     connect: {
