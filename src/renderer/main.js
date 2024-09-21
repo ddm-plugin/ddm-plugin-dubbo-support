@@ -21,9 +21,10 @@ export default (appRenderer) => {
       appRenderer.addMenu('bottom', {
         label: '测试1',
         icon: "el-icon-toilet-paper",
-        click: () => {
-          console.log('测试1')
-        },
+        src: "https://json4u.com/editor",
+        // click: () => {
+        //   console.log('测试1')
+        // },
       })
 
 
@@ -31,8 +32,15 @@ export default (appRenderer) => {
         module: "serviceTree",
         menuInfo: {
           label: "测试一下",
-          click: (serviceInfo) => {
-            debugger
+          click: (context, serviceInfo) => {
+
+            context.tab.addTab( {
+              title: "百度",
+              src: "http://www.baidu.com",
+              multiInstance: true,
+              params: {
+              },
+            })
             console.log(serviceInfo);
           } 
         }

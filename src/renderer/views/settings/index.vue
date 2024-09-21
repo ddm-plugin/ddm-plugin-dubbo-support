@@ -1,6 +1,5 @@
 <template>
     <el-form label-position="left" label-width="100px" ref="form"  >
-      <el-divider content-position="left">{{$pluginT('settings.title')}}</el-divider>
       <el-form-item :label="$pluginT('settings.invokerType')" >
         <el-select v-model="invokerType">
           <el-option v-for="invokerType in invokerTypes" :key="invokerType.code" :label="invokerType.name" :value="invokerType.code"></el-option>
