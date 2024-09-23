@@ -6,6 +6,11 @@ import Zookeeper                  from "@/renderer/views/edit/Zookeeper.vue";
 import Nacos                      from "@/renderer/views/edit/Nacos.vue";
 import DubboAdmin                 from "@/renderer/views/edit/DubboAdmin.vue";
 
+
+import ServiceTreeAction from './action/ServiceListAction';
+import CollectListAction from './action/CollectListAction';
+import HistoryListAction from './action/HistoryListAction';
+
 export default (appRenderer) => {
 
   return {
@@ -28,34 +33,27 @@ export default (appRenderer) => {
       })
 
 
-      appRenderer.addPluginMenu({
-        module: "serviceTree",
-        menuInfo: {
-          label: "测试一下",
-          click: (context, serviceInfo) => {
+      // appRenderer.addPluginMenu({
+      //   module: "serviceTree",
+      //   menuInfo: {
+      //     label: "测试一下",
+      //     click: (context, serviceInfo) => {
 
-            context.tab.addTab( {
-              title: "百度",
-              src: "http://www.baidu.com",
-              multiInstance: true,
-              params: {
-              },
-            })
-            console.log(serviceInfo);
-          } 
-        }
-      })
-      appRenderer.addPluginMenu({
-        module: "serviceTree",
-        test: (node) => node.nodeType !== 'package',
-        menuInfo: {
-          label: "新增一个接口",
-          click: async (serviceInfo) => {
-          console.log('新增了一个接口');
-          } 
-        }
-      })
+      //       context.tab.addTab( {
+      //         title: "百度",
+      //         src: "http://www.baidu.com",
+      //         multiInstance: true,
+      //         params: {
+      //         },
+      //       })
+      //       console.log(serviceInfo);
+      //     } 
+      //   }
+      // })
 
+      new ServiceTreeAction(appRenderer);
+      new CollectListAction(appRenderer);
+      new HistoryListAction(appRenderer);
     },
 
     uninstall() {}

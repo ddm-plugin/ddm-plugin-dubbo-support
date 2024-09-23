@@ -224,7 +224,7 @@ class DubboAdminDataSource {
             ip: urlData.host,
             port: urlData.port,
             address: `${urlData.host}:${urlData.port}`,
-            serviceName: data.service,
+            serviceName: data.service.split(":")[0],
             uniqueServiceName: data.service,
             version: urlData.params.version,
             group: "",
