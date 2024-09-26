@@ -33,24 +33,6 @@ export default (appRenderer) => {
       })
 
 
-      // appRenderer.addPluginMenu({
-      //   module: "serviceTree",
-      //   menuInfo: {
-      //     label: "测试一下",
-      //     click: (context, serviceInfo) => {
-
-      //       context.tab.addTab( {
-      //         title: "百度",
-      //         src: "http://www.baidu.com",
-      //         multiInstance: true,
-      //         params: {
-      //         },
-      //       })
-      //       console.log(serviceInfo);
-      //     } 
-      //   }
-      // })
-
       new ServiceTreeAction(appRenderer);
       new CollectListAction(appRenderer);
       new HistoryListAction(appRenderer);

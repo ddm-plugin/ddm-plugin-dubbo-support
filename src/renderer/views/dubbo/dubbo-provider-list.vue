@@ -72,7 +72,7 @@ export default {
     },
     async exportExcel() {
       let filePaths = this.$remote.dialog.showOpenDialogSync({
-        title: this.this.$pluginT('dubbo.consumerPage.selectExportDirectory'),
+        title: this.$pluginT('dubbo.consumerPage.selectExportDirectory'),
         defaultPath: "./",
 
         filters: [{

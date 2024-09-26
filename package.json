@@ -14,7 +14,6 @@
     "java-invoke/**"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack",
     "publish": "webpack && npm publish"
   },
@@ -23,6 +22,7 @@
     "ddm-plugin",
     "ddm"
   ],
+  "homepage": "https://github.com/ddm-plugin/ddm-plugin-dubbo-support",
   "author": "qiaolin",
   "license": "ISC",
   "devDependencies": {
