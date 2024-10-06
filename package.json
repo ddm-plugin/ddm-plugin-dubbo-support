@@ -1,6 +1,6 @@
 {
   "name": "ddm-plugin-dubbo-support",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Dubbo-Desktop-Manager插件-支持Dubbo框架",
   "main": "dist/index.js",
   "rendererMain": "dist/renderer.js",
@@ -20,11 +20,11 @@
   "keywords": [
     "Dubbo-Desktop-Manager",
     "ddm-plugin",
-    "ddm"
+    "ddm", "dubbo", "dubbo service invoke", "dubbo manager", "dubbo console", "dubbo admin"
   ],
   "homepage": "https://github.com/ddm-plugin/ddm-plugin-dubbo-support",
   "author": "qiaolin",
-  "license": "ISC",
+  "license": "Apache 2.0",
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "babel-cli": "^6.26.0",
@@ -46,6 +46,6 @@
     "webpack-cli": "^5.1.4"
   },
   "engines": {
-    "ddm": "2.0.0"
+    "ddm": ">=2.0.0"
   }
 }
