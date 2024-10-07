@@ -1,7 +1,7 @@
 
 <h1 align="center">
-  <img src="https://cdn.jsdelivr.net/npm/ddm-plugin-dubbo-support/logo.png" alt="Dubbo-Zookeeper-Support" width="200">
-  <br>Dubbo-Support<br>
+  <img src="https://cdn.jsdelivr.net/npm/ddm-plugin-dubbo-support/logo.png" width="100" height="100" alt="Dubbo-Zookeeper-Support" width="200">
+  <br>Dubbo框架支持<br>
 </h1>
 
 ## 一、功能简介

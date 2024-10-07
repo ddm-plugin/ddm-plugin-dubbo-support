@@ -7,9 +7,11 @@ import Nacos                      from "@/renderer/views/edit/Nacos.vue";
 import DubboAdmin                 from "@/renderer/views/edit/DubboAdmin.vue";
 
 
-import ServiceTreeAction from './action/ServiceListAction';
-import CollectListAction from './action/CollectListAction';
-import HistoryListAction from './action/HistoryListAction';
+import ServiceTreeAction          from './action/ServiceListAction';
+import CollectListAction          from './action/CollectListAction';
+import HistoryListAction          from './action/HistoryListAction';
+
+import hello from './hello.vue';
 
 export default (appRenderer) => {
 
@@ -36,6 +38,14 @@ export default (appRenderer) => {
       new ServiceTreeAction(appRenderer);
       new CollectListAction(appRenderer);
       new HistoryListAction(appRenderer);
+
+      appRenderer.openDialog({
+        title: "密密麻麻的百度",
+        component: hello,
+        params: {
+          name: "王老八"
+        }
+      });
     },
 
     uninstall() {}
