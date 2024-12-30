@@ -1,7 +1,7 @@
 export default {
     settings: {
         title: "Invoker Setting",
-        invokerType : "Default Invoker Type",
+        invokerType : "Default Invoker",
         invokerTypeTips : "Before using the Java actuator, install the Java environment first. Java invocation is slower than Telnet invocation, but the information returned by the Java invocation is more complete.",
     },
     connect: {

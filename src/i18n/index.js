@@ -9,4 +9,17 @@ files.keys().forEach((key) => {
     messages[`${optionKey}`] = message;
 })
 
-export default messages;
+export default (app) => {
+
+    return {
+        install() {
+            for(let key in messages) {
+                app.addPluginLocaleMessage(key, messages[key]);
+            }
+        },
+
+        uninstall() {
+            
+        }        
+    };
+}

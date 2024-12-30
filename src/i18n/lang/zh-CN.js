@@ -1,15 +1,21 @@
 export default {
     settings: {
         title:"执行器设置",
-        invokerType : "默认执行器类型",
+        invokerType : "默认执行器",
         invokerTypeTips : "使用Java执行器时，请先安装Java环境，Java调用相对Telnet执行器较慢，但是Java调用返回的信息更加完整。",
     },
     connect: {
+        validateMessage: {
+            timeOutNotNull: "超时时间不能为空",
+            inputNumber: "请输入数字",
+            inputNumberRange: "必须大于10ms",
+            inputConnectionAddress: "请输入链接地址",
+        },
 
         zookeeper: {
             address: "链接地址",
             sessionTimeout: "超时时间",
-            aclTips: "请输入认证信息, 例如：test:test"
+            aclTips: "请输入认证信息, 例如：test:test",
         },
 
         nacos: {

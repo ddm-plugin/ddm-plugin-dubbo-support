@@ -12,53 +12,6 @@ class ZookeeperDataSource {
 
   constructor(app, invoker) {
     this.invoker = invoker;
-    this.name = "Zookeeper";
-    // 可用的执行器列表，如果不填则为全部
-    this.invokerTypeList = ['java', 'telnet']
-  }
-
-
-  async getFormConfig() {
-    return {
-      initializeObject: {
-        source: "dubbo-zookeeper",
-      },
-      properties: [{
-          label: app.pluginT('connect.zookeeper.address'),
-          name: "address",
-          type: "input",
-          required: true,
-          placeholder: app.pluginT('connect.zookeeper.address'),
-          default: '127.0.0.1:2181',
-        },
-        {
-          label: 'ACL',
-          name: "auth",
-          type: "selectAndInput",
-          required: true,
-          placeholder: app.pluginT('connect.zookeeper.aclTips'),
-          default: '',
-          selectName: "scheme",
-          defaultSelect: 'auth',
-          choices: [{
-              name: 'digest',
-              value: 'digest'
-            },
-            {
-              name: 'auth',
-              value: 'auth'
-            }
-          ],
-        },
-        {
-          label: app.pluginT('connect.zookeeper.sessionTimeout'),
-          name: "sessionTimeout",
-          type: "input",
-          required: true,
-          default: "5000",
-        }
-      ],
-    }
   }
 
   async getServiceList(dataSourceInfo) {

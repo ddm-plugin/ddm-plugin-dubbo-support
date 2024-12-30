@@ -1,9 +1,10 @@
 {
   "name": "ddm-plugin-dubbo-support",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Dubbo-Desktop-Manager插件-支持Dubbo框架",
   "main": "dist/index.js",
   "rendererMain": "dist/renderer.js",
+  "i18nMain": "dist/i18n.js",
   "files": [
     "README.md",
     "logo.png",
@@ -13,17 +14,17 @@
     "java-invoke/**"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack",
     "publish": "webpack && npm publish"
   },
   "keywords": [
     "Dubbo-Desktop-Manager",
     "ddm-plugin",
-    "ddm"
+    "ddm", "dubbo", "dubbo service invoke", "dubbo manager", "dubbo console", "dubbo admin"
   ],
+  "homepage": "https://github.com/ddm-plugin/ddm-plugin-dubbo-support",
   "author": "qiaolin",
-  "license": "ISC",
+  "license": "Apache 2.0",
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "babel-cli": "^6.26.0",
@@ -44,8 +45,7 @@
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   },
-  "dependencies": {
-    "canvas-confetti": "^1.9.3",
-    "ddm-plugin-dubbo-support": "file:"
+  "engines": {
+    "ddm": ">=2.0.0"
   }
 }

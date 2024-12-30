@@ -6,6 +6,8 @@
 
 <script>
 
+import dubboProviderList          from "@/renderer/views/dubbo/dubbo-provider-list.vue";
+import dubboConsumerList          from "@/renderer/views/dubbo/dubbo-consumer-list.vue";
 export default {
   data() {
     return {};
@@ -17,7 +19,7 @@ export default {
     const providerTab = this.$refs.myTabs.addTab({
       title: this.$pluginT('dubbo.serviceTab.providerList'),
       fullTitle: this.$pluginT('dubbo.serviceTab.providerList'),
-      componentName: 'dubboProviderList',
+      component: dubboProviderList,
       closable: false,
       params: {
         serviceInfo: this.serviceInfo,
@@ -28,7 +30,7 @@ export default {
     this.$refs.myTabs.addTab({
       title: this.$pluginT('dubbo.serviceTab.consumerList'),
       fullTitle: this.$pluginT('dubbo.serviceTab.consumerList'),
-      componentName: 'dubboConsumerList',
+      component: dubboConsumerList,
       closable: false,
       params: {
         serviceInfo: this.serviceInfo,

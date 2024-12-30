@@ -5,7 +5,6 @@ import InvokerAdapter                   from "@/main/invoker/InvokerAdapter";
 import ZookeeperDataSource              from "./datasource/ZookeeperDataSource";
 import NacosDataSource                  from "./datasource/NacosDataSource";
 import DubboAdminDataSource             from "./datasource/DubboAdminDataSource";
-import messages                         from '../i18n';
 import appProxy                         from '@/common/AppProxy.js';
 
 export default (app) => {
@@ -17,17 +16,16 @@ export default (app) => {
     }
 
     return {
-        register() {
-            for(let key in messages) {
-                app.registryPluginLocal(key, messages[key]);
-            }
+        install() {
             appProxy.setApp(app);
-                        
+            
             const invoker = new InvokerAdapter(new JavaInvoker(app), new TelnetInvoker());
             app.registerDataSource('dubbo-admin', new DubboAdminDataSource(app));
             app.registerDataSource('nacos', new NacosDataSource(app, invoker));
             app.registerDataSource('zookeeper', new ZookeeperDataSource(app, invoker));
-            return {}
+        },
+        
+        uninstall() {
         }
     };
 
