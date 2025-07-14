@@ -32,14 +32,14 @@ class JavaInvoker {
             protocol: provder.protocol,
             address: `${ip}:${port}`,
             version: provder.version,
-            method: methodInfo.name,
+            method: methodInfo.methodName,
             argsList: this.getMethodParameterTypes(methodInfo),
             dataList: dataList
         }
     
         const outFile = path.join(`${this.pluginDir}/java-invoke/`, `${serviceName}${new Date().getTime()}.json`);
         fs.writeFileSync(outFile, JSON.stringify(invokeParam));
-     
+
         let data = await this.executeJar(outFile);
         if(data.success){
             return new InvokeUtils.InvokeResult(jsonFormat.format(JSON.stringify(data.data)), data.elapsedTime);

@@ -281,7 +281,7 @@ export default {
     async generateInvokeCommand() {
       const param = {
         serviceName: `${this.currentProvider.serviceName}`,
-        method: this.method.name,
+        method: this.method.methodName,
         params: JSON.parse(this.codeConfig.code),
       };
       this.invokeReulst.code = TelnetUtils.buildInvokeCommand(param);
@@ -289,7 +289,7 @@ export default {
     openHistoryDialog() {
       this.dialogVisible = true;
       this.$nextTick(() => {
-        this.$refs.dubboInvokeHistoryParam.changeParam(this.currentProvider, this.method.name);
+        this.$refs.dubboInvokeHistoryParam.changeParam(this.currentProvider, this.method.methodName);
       })
     },
     selectHistoryParam() {

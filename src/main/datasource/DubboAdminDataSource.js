@@ -62,6 +62,8 @@ class DubboAdminDataSource {
                 data.metadata.methods.forEach(method => {
                     methodList.push({
                         ...method,
+                        name: `${method.name}(${method.parameterTypes.map(pp => pp.substring(pp.lastIndexOf(".") + 1))})`,
+                        methodName: method.name,
                         defaultParameter: JSON.stringify(paramGenerator.generateParam(data.metadata, method.name), null, 2) || "[]",
                     });
                 })
@@ -183,7 +185,7 @@ class DubboAdminDataSource {
         const startTime = new Date().getTime();
         const data = {
             service: serviceInfo.uniqueServiceName,
-            method: methodInfo.name,
+            method: methodInfo.methodName,
             parameterTypes: this.getMethodParameterTypes(methodInfo),
             params: JSON.parse(code)
         }
@@ -231,7 +233,7 @@ class DubboAdminDataSource {
             providerVersion: urlData.params.revision,
             dubboVersion: urlData.params.release,
 
-            methods: urlData.params.methods.split(","),
+            methods: Array.from(new Set((urlData.params.methods || "").split(",").filter(Boolean))),
             protocol: urlData.protocol,
             generic: urlData.params.generic,
             deprecated: urlData.params.deprecated,

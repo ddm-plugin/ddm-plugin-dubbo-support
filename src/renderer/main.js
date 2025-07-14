@@ -13,6 +13,9 @@ import HistoryListAction          from './action/HistoryListAction';
 
 import hello from './hello.vue';
 
+/**
+ * @param {import('@/renderer/types').AppRenderer} appRenderer
+ */
 export default (appRenderer) => {
 
   return {
@@ -26,7 +29,7 @@ export default (appRenderer) => {
       appRenderer.registrySettingComponent("Dubbo Settings", settings, {});
       
       appRenderer.addMenu('bottom', {
-        label: '测试1',
+        label: "测试",
         icon: "el-icon-toilet-paper",
         src: "https://json4u.com/editor",
         // click: () => {

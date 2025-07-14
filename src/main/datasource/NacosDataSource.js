@@ -94,12 +94,14 @@ class NacosDataSource {
             providerInfo.disabled = disabledAddresses.find(item => item === '0.0.0.0' || item === providerInfo.address) != null;
 
             const metadata = await serviceMatadataMap.computeIfAbsent(this.buildMataDataPath(providerInfo), async (dataId) => JSON.parse(await this.getConfig(dataSourceInfo, dataId)));
-      
+
             const methodList = [];
             if(metadata){
                 metadata.methods.forEach(method => {
                     methodList.push({
                         ...method,
+                        name: `${method.name}(${method.parameterTypes.map(pp => pp.substring(pp.lastIndexOf(".") + 1))})`,
+                        methodName: method.name,
                         defaultParameter: JSON.stringify(paramGenerator.generateParam(metadata, method.name), null, 2) || "[]",
                     });
                 })
@@ -250,7 +252,7 @@ class NacosDataSource {
             weight: data.weight,
             disabled: !data.enabled,
             generic: metadata.generic,
-            methods: metadata.methods.split(","),
+            methods: Array.from(new Set((metadata.methods || "").split(",").filter(Boolean))),
             // 2.7x就是dubbo端口，3.0之后是指定的端口
             protocol: metadata.protocol,
             qosPort: data.qosPort || data.port

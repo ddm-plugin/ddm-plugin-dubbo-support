@@ -69,7 +69,7 @@ class TelnetInvoker {
 
             tSocket.write(TelnetUtils.buildInvokeCommand({
                 serviceName,
-                method: methodInfo.name,
+                method: methodInfo.methodName,
                 params
             }));
         });

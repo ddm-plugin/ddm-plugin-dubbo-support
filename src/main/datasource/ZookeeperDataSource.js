@@ -55,6 +55,8 @@ class ZookeeperDataSource {
         metadata.methods.forEach(method => {
           methodList.push({
             ...method,
+            name: `${method.name}(${method.parameterTypes.map(pp => pp.substring(pp.lastIndexOf(".") + 1))})`,
+            methodName: method.name,
             defaultParameter: JSON.stringify(paramGenerator.generateParam(metadata, method.name), null, 2) || "[]",
           });
         })
@@ -129,11 +131,7 @@ class ZookeeperDataSource {
   }
 
   buildMataDataPath(providerInfo) {
-    const {
-      application,
-      serviceName,
-      version
-    } = providerInfo;
+    const { application, serviceName, version } = providerInfo;
     return `/dubbo/metadata/${serviceName}/${version}/provider/${application}`;
   }
 
@@ -160,7 +158,7 @@ class ZookeeperDataSource {
 
       deprecated: urlData.params.deprecated,
       protocol: urlData.protocol,
-      methods: urlData.params.methods.split(","),
+      methods: Array.from(new Set((urlData.params.methods || "").split(",").filter(Boolean))) ,
       generic: urlData.params.generic,
       providerVersion: urlData.params.revision,
       dubboVersion: urlData.params.release,
