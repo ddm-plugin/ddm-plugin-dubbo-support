@@ -9,7 +9,7 @@
     </el-form-item>
 
     <el-form-item :label="$pluginT('connect.dubboAdmin.password')"  prop="password" >
-      <el-input type="input" v-model="form.password" :placeholder="$pluginT('connect.dubboAdmin.password')" ></el-input>
+      <el-input type="password" v-model="form.password" :placeholder="$pluginT('connect.dubboAdmin.password')" show-password ></el-input>
     </el-form-item>
 
     <el-form-item :label="$pluginT('connect.nacos.sessionTimeout')" prop="sessionTimeout" :rules="timeoutRules" >
